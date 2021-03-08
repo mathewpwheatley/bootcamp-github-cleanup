@@ -9,8 +9,12 @@ const GET_ALL_PULL_REQUESTS = gql`
     viewer {
       pullRequests(first: $first, after: $after, states: $states) {
         totalCount
+        pageInfo {
+          endCursor
+          hasNextPage
+          hasPreviousPage
+        }
         edges {
-          cursor
           node {
             id
             title
