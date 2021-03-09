@@ -80,12 +80,12 @@ const PullRequests = () => {
   const selectAllAction = () => {
     if (selectedIds.length === 0) {
       setSelectedIds(
-        data.viewer.pullRequests.edges
+        data.viewer.pullRequests.nodes
           .filter((pullRequest) => {
-            return pullRequest.node.state === 'OPEN'
+            return pullRequest.state === 'OPEN'
           })
           .map((pullRequest) => {
-            return pullRequest.node.id
+            return pullRequest.id
           })
       )
     } else {
@@ -105,7 +105,7 @@ const PullRequests = () => {
       />
       <CommonTable
         variant='pullRequests'
-        data={data.viewer.pullRequests.edges}
+        data={data.viewer.pullRequests.nodes}
         selectedIds={selectedIds}
         selectAction={selectAction}
         selectAllAction={selectAllAction}

@@ -21,13 +21,15 @@ const GET_ALL_PULL_REQUESTS = gql`
           startCursor
           endCursor
         }
-        edges {
-          node {
-            id
-            title
-            createdAt
-            updatedAt
-            state
+        nodes {
+          id
+          title
+          createdAt
+          updatedAt
+          state
+          permalink
+          repository {
+            name
           }
         }
       }

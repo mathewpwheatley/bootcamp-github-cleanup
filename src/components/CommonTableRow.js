@@ -3,9 +3,19 @@ import { Form } from 'react-bootstrap'
 
 const CommonTableRow = ({ checked, datum, dataKeys, selectAction }) => {
   const mapColumns = () => {
-    return dataKeys.map((dataKey, index) => (
-      <td key={index}>{datum.node[dataKey]}</td>
-    ))
+    return dataKeys.map((dataKey, index) => {
+      if (dataKey === 'permalink') {
+        return (
+          <td key={index}>
+            <a href={datum[dataKey]}>View on Github</a>
+          </td>
+        )
+      } else if (dataKey === 'repository') {
+        return <td key={index}>{datum[dataKey].name}</td>
+      } else {
+        return <td key={index}>{datum[dataKey]}</td>
+      }
+    })
   }
 
   return (
@@ -13,10 +23,10 @@ const CommonTableRow = ({ checked, datum, dataKeys, selectAction }) => {
       <td>
         <Form.Group controlId='formBasicCheckbox'>
           <Form.Check
-            disabled={datum.node.state != 'OPEN'}
+            disabled={datum.state !== 'OPEN'}
             type='checkbox'
             checked={checked}
-            onClick={() => selectAction(datum.node.id)}
+            onClick={() => selectAction(datum.id)}
           />
         </Form.Group>
       </td>

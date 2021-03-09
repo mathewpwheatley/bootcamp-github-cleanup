@@ -15,11 +15,12 @@ const CommonTable = ({
       case 'pullRequests':
         attributes = {
           displayKeys: {
-            id: 'ID',
             title: 'Title',
             createdAt: 'Created At',
             updatedAt: 'Updated At',
             state: 'State',
+            repository: 'Repository',
+            permalink: 'Link',
           },
         }
         break
@@ -48,7 +49,7 @@ const CommonTable = ({
         key={datum.id}
         datum={datum}
         dataKeys={Object.keys(attributes.displayKeys)}
-        checked={selectedIds.includes(datum.node.id)}
+        checked={selectedIds.includes(datum.id)}
         selectAction={selectAction}
       />
     ))
