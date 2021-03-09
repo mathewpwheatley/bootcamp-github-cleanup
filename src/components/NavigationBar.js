@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { Navbar, Nav } from 'react-bootstrap'
+import { Navbar } from 'react-bootstrap'
 
 const NavigationBar = () => {
   return (
@@ -9,7 +9,7 @@ const NavigationBar = () => {
         <NavLink exact to='/' title='Bootcamp Github Cleanup'>
           <Navbar.Brand>
             <span className='d-none d-sm-none d-md-inline'>
-              Bootcamp Github Cleanup
+              Bootcamp Github Cleanup: Pull Requests
             </span>
           </Navbar.Brand>
         </NavLink>

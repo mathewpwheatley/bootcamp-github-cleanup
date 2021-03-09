@@ -1,14 +1,15 @@
 import { gql } from '@apollo/client'
 
 const CLOSE_PULL_REQUEST = gql`
-  mutation {
+  mutation closePullRequest($pullRequestId: ID, $clientMutationId: String) {
     closePullRequest(
       input: {
-        pullRequestId: "MDExOlB1bGxSZXF1ZXN0Mzk1MzE5Mzg1"
-        clientMutationId: "MDQ6VXNlcjYxOTk2OTEz"
+        pullRequestId: $pullRequestId
+        clientMutationId: $clientMutationId
       }
     ) {
       pullRequest {
+        id
         state
       }
     }

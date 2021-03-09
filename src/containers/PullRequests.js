@@ -14,7 +14,7 @@ const PullRequests = () => {
   const [pageCursor, setPageCursor] = useState()
   const [pageCursorDirection, setPageCursorDirection] = useState('after')
   const [countPerPage, setCountPerPage] = useState(countPerPageOptions[0])
-  const [currentStates, setCurrentStates] = useState(currentStateOptions)
+  const [currentStates, setCurrentStates] = useState(currentStateOptions[0])
   const [selectedIds, setSelectedIds] = useState([])
 
   const useQueryVariables = () => {
@@ -116,7 +116,10 @@ const PullRequests = () => {
         nextPageAction={nextPageAction}
         previousPageAction={previousPageAction}
       />
-      <ClosePullRequestButton pullRequestIds={selectedIds} />
+      <ClosePullRequestButton
+        pullRequestIds={selectedIds}
+        clientMutationId={data.viewer.id}
+      />
     </>
   )
 }

@@ -9,6 +9,7 @@ const GET_ALL_PULL_REQUESTS = gql`
     $states: [PullRequestState!]
   ) {
     viewer {
+      id
       pullRequests(
         first: $first
         after: $after
