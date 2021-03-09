@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import NavigationBar from './NavigationBar'
-import QuerypullRequests from '../containers/PullRequestTable'
+import PullRequests from '../containers/PullRequests'
 
 class App extends Component {
   render() {
@@ -9,7 +9,7 @@ class App extends Component {
       <Router>
         <NavigationBar />
         <div className='col-10 my-4 mx-auto'>
-          <QuerypullRequests />
+          <PullRequests />
         </div>
       </Router>
     )

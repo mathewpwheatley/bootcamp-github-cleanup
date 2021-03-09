@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { Navbar, Nav, Dropdown, Badge } from 'react-bootstrap'
+import { Navbar, Nav } from 'react-bootstrap'
 
 const NavigationBar = () => {
   return (
