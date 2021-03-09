@@ -9,7 +9,7 @@ const ClosePullRequestButton = ({ pullRequestIds, clientMutationId }) => {
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
 
-  const [closePullRequest, { data }] = useMutation(CLOSE_PULL_REQUEST)
+  const [closePullRequest] = useMutation(CLOSE_PULL_REQUEST)
 
   const handleClosePullRequests = () => {
     handleClose()
