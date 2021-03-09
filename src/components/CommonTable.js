@@ -24,14 +24,6 @@ const CommonTable = ({
           },
         }
         break
-      case 'repositories':
-        attributes = {
-          displayKeys: {
-            id: 'ID',
-            classNames: 'Name',
-          },
-        }
-        break
       default:
         break
     }

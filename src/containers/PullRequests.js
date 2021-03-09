@@ -14,7 +14,7 @@ const PullRequests = () => {
   const [pageCursor, setPageCursor] = useState()
   const [pageCursorDirection, setPageCursorDirection] = useState('after')
   const [countPerPage, setCountPerPage] = useState(countPerPageOptions[0])
-  const [currentStates, setCurrentStates] = useState(currentStateOptions[0])
+  const [currentStates, setCurrentStates] = useState([currentStateOptions[0]])
   const [selectedIds, setSelectedIds] = useState([])
 
   const useQueryVariables = () => {
